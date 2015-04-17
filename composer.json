@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Softon\\Sms": "src/"
+            "Softon\\Sms\\": "src/"
         }
     },
     "minimum-stability": "dev"
