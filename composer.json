@@ -1,0 +1,26 @@
+{
+    "name": "softon/sms",
+    "description": "Simple SMS Api for sending short text messages from your application",
+    "keywords": [
+        "gupshup",
+        "mvaayoo",
+        "sms",
+        "india"
+    ],
+    "authors": [
+        {
+            "name": "Shiburaj",
+            "email": "powerupneo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Softon\\Sms": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
