@@ -40,7 +40,7 @@ class MVaayooGateway implements SmsGatewayInterface {
         $response = $client->get($this->getUrl());
         $this->status = $response->getBody();
         $status = explode(',',$this->status);
-        if($status[0]=='Status=0'){
+        if(trim($status[0])=='Status=0'){
             return true;
         }else{
             return false;

@@ -6,21 +6,21 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |
-    |
+    |   gateway = Gupshup / MVaayoo
+    |   view    = File
     */
 
 
 
-    'gateway' => 'MVaayoo',
+    'gateway' => 'Gupshup',
 
 
     'view'    => 'File',
 
 
     'gupshup' => [
-        'userid'  => 'test',
-        'password' => 'test123',
+        'userid'  => env('SMS_USERID'),
+        'password' => env('SMS_PASSWORD'),
     ],
 
     'mvaayoo' => [

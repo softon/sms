@@ -43,7 +43,7 @@ class GupshupGateway implements SmsGatewayInterface {
         $response = $client->get($this->getUrl());
         $this->status = $response->getBody();
         $status = explode('|',$this->status);
-        if($status[0]=='success'){
+        if(trim($status[0])=='success'){
             return true;
         }else{
             return false;
