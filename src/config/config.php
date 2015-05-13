@@ -6,13 +6,13 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |   gateway = Gupshup / MVaayoo
+    |   gateway = Log / Gupshup / MVaayoo
     |   view    = File
     */
 
 
 
-    'gateway' => 'Gupshup',
+    'gateway' => 'Log',
 
 
     'view'    => 'File',
