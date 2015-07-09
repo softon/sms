@@ -1,6 +1,7 @@
 {
     "name": "softon/sms",
-    "description": "Simple SMS Api for sending short text messages from your application",
+    "description": "Simple SMS Driver Package for sending short text messages from your Laravel application.",
+    "license": "MIT",
     "keywords": [
         "gupshup",
         "mvaayoo",
