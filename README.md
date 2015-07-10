@@ -1,5 +1,5 @@
 # sms
-Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5.Currently supported Gateways MVaayoo, Gupshup, SmsAchariya, SmsCountry / Any REST based Gateways are supported by Custom Gateway. Log gateway can be used for testing.
+Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5.Currently supported Gateways MVaayoo, Gupshup, SmsAchariya, SmsCountry, SmsLane / Any REST based Gateways are supported by Custom Gateway. Log gateway can be used for testing.
 
 <strong>Installation</strong>
 

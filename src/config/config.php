@@ -6,7 +6,7 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |   gateway = Log / Gupshup / MVaayoo / SmsAchariya / Custom
+    |   gateway = Log / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Custom
     |   view    = File
     */
 
@@ -39,6 +39,13 @@ return [
         'user'  => '',
         'passwd'  => '',
         'sid'  => 'SMSCountry',
+    ],
+
+    'smslane' => [                          // Get it from http://smslane.com
+        'user'  => '',
+        'password'  => '',
+        'sid'  => 'WebSMS',
+        'gwid'  => '1',                     // 1 - Promotional & 2 - Transactional Route
     ],
 
     'custom' => [                           // Can be used for any gateway
