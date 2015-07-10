@@ -1,12 +1,12 @@
 {
     "name": "softon/sms",
-    "description": "Simple SMS Driver Package for sending short text messages from your Laravel application.",
+    "description": "Simple SMS Package for sending short text messages from your Application. Currently supported Gateways MVaayoo, Gupshup, SmsAchariya. Log gateway can be used for testing.",
     "license": "MIT",
     "keywords": [
         "gupshup",
         "mvaayoo",
-        "sms",
-        "india"
+        "sms achariya",
+        "sms gateway",
     ],
     "authors": [
         {

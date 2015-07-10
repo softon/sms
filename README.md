@@ -1,5 +1,5 @@
 # sms
-Simple SMS Api for sending short text messages from your Laravel Application
+Simple SMS Driver for sending short text messages from your PHP Application. Facades for Laravel 5.
 
 <strong>Installation</strong>
 
@@ -27,4 +27,7 @@ Simple SMS Api for sending short text messages from your Laravel Application
 
 Edit the config/sms.php. Set the appropriate Gateway and its parameters. Then in your code... <br>
 <pre><code> use Softon\Sms\Facades\Sms;  </code></pre>
-<pre><code> Sms::send('sms.test','87686655455',['param1'=>'Name 1']);  </code></pre>
+Send Single SMS:-
+<pre><code> Sms::send('9090909090','sms.test',['param1'=>'Name 1']);  </code></pre>
+Send Multiple SMS:-
+<pre><code> Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1']);  </code></pre>
