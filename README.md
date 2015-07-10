@@ -1,5 +1,5 @@
 # sms
-Simple SMS Driver for sending short text messages from your PHP Application. Facades for Laravel 5.
+Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5.Currently supported Gateways MVaayoo, Gupshup, SmsAchariya, SmsCountry / Any REST based Gateways are supported by Custom Gateway. Log gateway can be used for testing.
 
 <strong>Installation</strong>
 
@@ -34,8 +34,11 @@ Send Multiple SMS:-
 
 
 <strong>Custom Gateway</strong>
+
 Actual Url : <code>http://example.com/api/sms.php?uid=737262316a&pin=YOURPIN&sender=your_sender_id&route=0&mobile=MOBILE&message=MESSAGE&pushid=1</code>
+
 Config of Custom Gateway :
+
 <pre><code> 
         'custom' => [                           
              'url' => 'http://example.com/api/sms.php?',

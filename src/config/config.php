@@ -35,6 +35,12 @@ return [
         'pin'  => '',
     ],
 
+    'smscountry' => [                       // Get it from http://www.smscountry.com/
+        'user'  => '',
+        'passwd'  => '',
+        'sid'  => 'SMSCountry',
+    ],
+
     'custom' => [                           // Can be used for any gateway
         'url' => '',                        // Gateway Endpoint
         'params' => [                       // Parameters to be included in the request
