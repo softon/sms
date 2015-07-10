@@ -1,5 +1,7 @@
 <?php namespace Softon\Sms;
 
+use Softon\Sms\Gateways\SmsGatewayInterface;
+
 class Sms {
 
     protected $gateway;
@@ -15,7 +17,7 @@ class Sms {
         $this->view = $view;
     }
 
-    public function send($view,$mobile,$params){
+    public function send($mobile,$view,$params=[]){
 
         $message = $this->view->getView($view,$params)->render();
         return $this->gateway->sendSms($mobile,$message);

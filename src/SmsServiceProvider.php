@@ -23,7 +23,7 @@ class SmsServiceProvider extends ServiceProvider {
         $view    = Config::get('sms.view');
         $this->app->bind('sms', '\Softon\Sms\Sms');
 
-        $this->app->bind('\Softon\Sms\SmsGatewayInterface','\Softon\Sms\\'.$gateway.'Gateway');
+        $this->app->bind('\Softon\Sms\Gateways\SmsGatewayInterface','\Softon\Sms\Gateways\\'.$gateway.'Gateway');
         $this->app->bind('\Softon\Sms\SmsViewInterface','\Softon\Sms\Sms'.$view.'View');
 	}
 

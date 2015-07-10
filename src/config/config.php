@@ -6,26 +6,34 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |   gateway = Log / Gupshup / MVaayoo
+    |   gateway = Log / Gupshup / MVaayoo / SmsAchariya
     |   view    = File
     */
 
+    'countryCode' => '+91',
 
-
-    'gateway' => 'Log',
+    'gateway' => 'Log',                     // Replace with the name of appropriate gateway
 
 
     'view'    => 'File',
 
 
     'gupshup' => [
-        'userid'  => env('SMS_USERID'),
-        'password' => env('SMS_PASSWORD'),
+        'userid'  => '',                    // Get it from http://enterprise.gupshup.com
+        'password' => '',
     ],
 
     'mvaayoo' => [
-        'user'  => 'test:test123',
-        'senderID'  => '56263',
+        'user'  => '',                      // Get it from http://mvaayoo.com
+        'senderID'  => 'TEST SMS',
     ],
+
+
+    'smsachariya' => [
+        'domain'  => '',                    // Get it From http://smsachariya.com
+        'uid'  => '',
+        'pin'  => '',
+    ],
+
 
 ];

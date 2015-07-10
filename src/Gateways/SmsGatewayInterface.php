@@ -1,4 +1,4 @@
-<?php namespace Softon\Sms;
+<?php namespace Softon\Sms\Gateways;
 
 interface SmsGatewayInterface {
     public function getUrl();
