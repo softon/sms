@@ -1,11 +1,12 @@
 {
     "name": "softon/sms",
-    "description": "Simple SMS Package for sending short text messages from your Application. Currently supported Gateways MVaayoo, Gupshup, SmsAchariya. Log gateway can be used for testing.",
+    "description": "Simple SMS Package for sending short text messages from your Application. Currently supported Gateways MVaayoo, Gupshup, SmsAchariya / Any REST based Gateways are supported by Custom Gateway. Log gateway can be used for testing.",
     "license": "MIT",
     "keywords": [
         "gupshup",
         "mvaayoo",
         "sms achariya",
+        "Custom / Any",
         "sms gateway",
     ],
     "authors": [

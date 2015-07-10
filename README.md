@@ -31,3 +31,25 @@ Send Single SMS:-
 <pre><code> Sms::send('9090909090','sms.test',['param1'=>'Name 1']);  </code></pre>
 Send Multiple SMS:-
 <pre><code> Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1']);  </code></pre>
+
+
+<strong>Custom Gateway</strong>
+Actual Url : <code>http://example.com/api/sms.php?uid=737262316a&pin=YOURPIN&sender=your_sender_id&route=0&mobile=MOBILE&message=MESSAGE&pushid=1</code>
+Config of Custom Gateway :
+<pre><code> 
+        'custom' => [                           
+             'url' => 'http://example.com/api/sms.php?',
+             'params' => [
+                 'send_to_name' => 'mobile',
+                 'msg_name' => 'message',
+                 'others' => [
+                     'uid' => '737262316a',
+                     'pin' => 'YOURPIN',
+                     'sender' => 'your_sender_id',
+                     'route' => '0',
+                     'pushid' => '1',
+                 ],
+             ],
+             'add_code' => true,
+         ],
+ </code></pre>

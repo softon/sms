@@ -6,7 +6,7 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |   gateway = Log / Gupshup / MVaayoo / SmsAchariya
+    |   gateway = Log / Gupshup / MVaayoo / SmsAchariya / Custom
     |   view    = File
     */
 
@@ -34,6 +34,41 @@ return [
         'uid'  => '',
         'pin'  => '',
     ],
+
+    'custom' => [                           // Can be used for any gateway
+        'url' => '',                        // Gateway Endpoint
+        'params' => [                       // Parameters to be included in the request
+            'send_to_name' => '',           // Name of the field of recipient number
+            'msg_name' => '',               // Name of the field of Message Text
+            'others' => [                   // Other Authentication params with their values
+                'param1' => '',
+                'param2' => '',
+                'param3' => '',
+                'param4' => '',
+            ],
+        ],
+        'add_code' => true,                 // Append country code to the mobile numbers
+    ],
+
+    /*
+     * Example of Custom Gateway
+     * Actual Url : http://example.com/api/sms.php?uid=737262316a&pin=YOURPIN&sender=your_sender_id&route=0&mobile=MOBILE&message=MESSAGE&pushid=1
+     * 'custom' => [                           // Can be used for any gateway
+            'url' => 'http://example.com/api/sms.php?',
+            'params' => [
+                'send_to_name' => 'mobile',
+                'msg_name' => 'message',
+                'others' => [
+                    'uid' => '737262316a',
+                    'pin' => 'YOURPIN',
+                    'sender' => 'your_sender_id',
+                    'route' => '0',
+                    'pushid' => '1',
+                ],
+            ],
+            'add_code' => true,
+        ],
+     */
 
 
 ];
