@@ -1,5 +1,5 @@
 # sms
-Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5.Currently supported Gateways MVaayoo, Gupshup, SmsAchariya, SmsCountry, SmsLane / Any REST based Gateways are supported by Custom Gateway. Log gateway can be used for testing.
+Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5.Currently supported Gateways Clickatell, MVaayoo, Gupshup, SmsAchariya, SmsCountry, SmsLane / Any HTTP/s based Gateways are supported by Custom Gateway. Log gateway can be used for testing.
 
 <strong>Installation</strong>
 
@@ -31,6 +31,8 @@ Send Single SMS:-
 <pre><code> Sms::send('9090909090','sms.test',['param1'=>'Name 1']);  </code></pre>
 Send Multiple SMS:-
 <pre><code> Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1']);  </code></pre>
+With Response:-
+<pre><code> Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1'])->response();  </code></pre>
 
 
 <strong>Custom Gateway</strong>

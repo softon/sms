@@ -6,7 +6,7 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |   gateway = Log / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Custom
+    |   gateway = Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Custom
     |   view    = File
     */
 
@@ -17,6 +17,11 @@ return [
 
     'view'    => 'File',
 
+    'clickatell' => [                       // Get it from http://clickatell.com
+        'app_id'  => '',
+        'user'  => '',
+        'password' => '',
+    ],
 
     'gupshup' => [
         'userid'  => '',                    // Get it from http://enterprise.gupshup.com
