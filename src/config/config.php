@@ -18,7 +18,7 @@ return [
     'view'    => 'File',
 
     'clickatell' => [                       // Get it from http://clickatell.com
-        'app_id'  => '',
+        'api_id'  => '',
         'user'  => '',
         'password' => '',
     ],
