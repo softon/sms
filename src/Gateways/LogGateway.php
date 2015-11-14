@@ -63,4 +63,10 @@ class LogGateway implements SmsGatewayInterface {
     }
 
 
+    public function response()
+    {
+        return $this->response;
+    }
+
+
 }
