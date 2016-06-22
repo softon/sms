@@ -26,11 +26,17 @@ Simple SMS Gateway Package for sending short text messages from your Application
 <strong>Usage</strong>
 
 Edit the config/sms.php. Set the appropriate Gateway and its parameters. Then in your code... <br>
-```php use Softon\Sms\Facades\Sms;  ```
+```php
+ use Softon\Sms\Facades\Sms;  
+ ```
 Send Single SMS:-
-```php Sms::send('9090909090','sms.test',['param1'=>'Name 1']);  ```
+```php
+ Sms::send('9090909090','sms.test',['param1'=>'Name 1']);  
+ ```
 Send Multiple SMS:-
-```php Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1']);  ```
+```php
+ Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1']);  
+ ```
 Select the Gateway before sending the Message:-
 ```php
 //Gateways ::  Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Custom
@@ -38,7 +44,9 @@ Sms::gateway('NameOfGateway')->send(['87686655455','1212121212','2323232323'],'s
 ```
 
 With Response:-
-```php Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1'])->response();  ```
+```php 
+Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1'])->response();  
+```
 
 
 <strong>Custom Gateway</strong>
