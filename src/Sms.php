@@ -1,6 +1,14 @@
 <?php namespace Softon\Sms;
 
+use Softon\Sms\Gateways\ClickatellGateway;
+use Softon\Sms\Gateways\CustomGateway;
+use Softon\Sms\Gateways\GupshupGateway;
+use Softon\Sms\Gateways\LogGateway;
+use Softon\Sms\Gateways\MVaayooGateway;
+use Softon\Sms\Gateways\SmsAchariyaGateway;
+use Softon\Sms\Gateways\SmsCountryGateway;
 use Softon\Sms\Gateways\SmsGatewayInterface;
+use Softon\Sms\Gateways\SmsLaneGateway;
 
 class Sms {
 
@@ -25,5 +33,38 @@ class Sms {
 
     public function send_raw($mobile,$message){
         return $this->gateway->sendSms($mobile,$message);
+    }
+
+    public function gateway($name)
+    {
+        // Gateways : Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Custom
+        switch($name)
+        {
+            case 'Log':
+                $this->gateway = new LogGateway();
+                break;
+            case 'Clickatell':
+                $this->gateway = new ClickatellGateway();
+                break;
+            case 'Gupshup':
+                $this->gateway = new GupshupGateway();
+                break;
+            case 'MVaayoo':
+                $this->gateway = new MVaayooGateway();
+                break;
+            case 'SmsAchariya':
+                $this->gateway = new SmsAchariyaGateway();
+                break;
+            case 'SmsCountry':
+                $this->gateway = new SmsCountryGateway();
+                break;
+            case 'SmsLane':
+                $this->gateway = new SmsLaneGateway();
+                break;
+            case 'Custom':
+                $this->gateway = new CustomGateway();
+                break;
+        }
+        return $this;
     }
 }
