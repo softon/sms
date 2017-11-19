@@ -28,5 +28,18 @@
             "Softon\\Sms\\": "src/"
         }
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.0"
+        },
+        "laravel": {
+            "providers": [
+                "Softon\\Sms\\SmsServiceProvider"
+            ],
+            "aliases": {
+                "Sms": "Softon\\Sms\\Facades\\Sms"
+            }
+        }
+    },
     "minimum-stability": "dev"
 }
