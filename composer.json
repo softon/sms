@@ -29,9 +29,6 @@
         }
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "2.0.0"
-        },
         "laravel": {
             "providers": [
                 "Softon\\Sms\\SmsServiceProvider"
