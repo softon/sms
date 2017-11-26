@@ -50,7 +50,7 @@ class SmsAchariyaGateway implements SmsGatewayInterface {
         $this->gwvars['mobile'] = $mobile;
         $this->gwvars['message'] = $message;
         $client = new \GuzzleHttp\Client();
-        $this->response = $client->post($this->getUrl(),['body'=>$this->gwvars])->getBody()->getContents();
+        $this->response = $client->post($this->getUrl(),['form_params'=>$this->gwvars])->getBody()->getContents();
         Log::info('SMS Achariya Response: '.$this->response);
         return $this;
     }
@@ -109,8 +109,8 @@ class SmsAchariyaGateway implements SmsGatewayInterface {
      */
     public function response(){
         $client = new \GuzzleHttp\Client();
-        $report = $client->post('http://sms.djtma.com/api/dlr.php?',[
-            'body'=>[
+        $report = $client->post("http://".Config::get('sms.smsachariya.domain')."/api/dlr.php?",[
+            'form_params'=>[
                 'uid'=>$this->gwvars['uid'],
                 'pin'=>$this->gwvars['pin'],
                 'msgid'=>$this->response

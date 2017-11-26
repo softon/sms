@@ -6,7 +6,7 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |   gateway = Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Custom
+    |   gateway = Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Nexmo / Custom
     |   view    = File
     */
 
@@ -51,6 +51,12 @@ return [
         'password'  => '',
         'sid'  => 'WebSMS',
         'gwid'  => '1',                     // 1 - Promotional & 2 - Transactional Route
+    ],
+
+    'nexmo' => [
+        'api_key'  => '',                    // Get it From http://nexmo.com
+        'api_secret'  => '',
+        'from'  => '',
     ],
 
     'custom' => [                           // Can be used for any gateway
