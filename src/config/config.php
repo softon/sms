@@ -12,7 +12,7 @@ return [
 
     'countryCode' => '+91',
 
-    'gateway' => 'Log',                     // Replace with the name of appropriate gateway
+    'gateway' => 'Mocker',                     // Replace with the name of appropriate gateway
 
 
     'view'    => 'File',
@@ -57,6 +57,10 @@ return [
         'api_key'  => '',                    // Get it From http://nexmo.com
         'api_secret'  => '',
         'from'  => '',
+    ],
+
+    'mocker' => [
+        'sender_id'  => '',                    // http://mocker.in :: Any Random Value of Your Choise
     ],
 
     'custom' => [                           // Can be used for any gateway

@@ -9,6 +9,7 @@ use Softon\Sms\Gateways\SmsAchariyaGateway;
 use Softon\Sms\Gateways\SmsCountryGateway;
 use Softon\Sms\Gateways\SmsGatewayInterface;
 use Softon\Sms\Gateways\SmsLaneGateway;
+use Softon\Sms\Gateways\NexmoGateway;
 
 class Sms {
 
@@ -37,7 +38,7 @@ class Sms {
 
     public function gateway($name)
     {
-        // Gateways : Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Custom
+        // Gateways : Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Nexmo / Mocker/ Custom
         switch($name)
         {
             case 'Log':
@@ -60,6 +61,12 @@ class Sms {
                 break;
             case 'SmsLane':
                 $this->gateway = new SmsLaneGateway();
+                break;
+            case 'Nexmo':
+                $this->gateway = new NexmoGateway();
+                break;
+            case 'Mocker':
+                $this->gateway = new MockerGateway();
                 break;
             case 'Custom':
                 $this->gateway = new CustomGateway();

@@ -1,8 +1,9 @@
 {
     "name": "softon/sms",
-    "description": "Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5.Currently supported Gateways Clickatell , MVaayoo, Gupshup, SmsAchariya, SmsCountry , SmsLane , Nexmo / Any HTTP/s based Gateways are supported by Custom Gateway. Log gateway can be used for testing.",
+    "description": "Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5.Currently supported Gateways Clickatell , MVaayoo, Gupshup, SmsAchariya, SmsCountry , SmsLane , Nexmo, Mocker / Any HTTP/s based Gateways are supported by Custom Gateway. Log gateway can be used for testing.",
     "license": "MIT",
     "keywords": [
+        "mocker",
         "clickatell",
         "gupshup",
         "mvaayoo",

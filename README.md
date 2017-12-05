@@ -1,5 +1,5 @@
 # sms
-Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5(Updated to work with Laravel 5.5).Currently supported Gateways Clickatell, MVaayoo, Gupshup, SmsAchariya, SmsCountry, SmsLane, Nexmo / Any HTTP/s based Gateways are supported by Custom Gateway. Log gateway can be used for testing.
+Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5(Updated to work with Laravel 5.5).Currently supported Gateways Clickatell, MVaayoo, Gupshup, SmsAchariya, SmsCountry, SmsLane, Nexmo, Mocker / Any HTTP/s based Gateways are supported by Custom Gateway. Log gateway can be used for testing.
 
 <strong>Installation</strong>
 
@@ -42,7 +42,7 @@ Sms::send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 
  ```
 Select the Gateway before sending the Message:-
 ```php
-//Gateways ::  Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Nexmo / Custom
+//Gateways ::  Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Nexmo / Mocker / Custom
 // Default is Log
 Sms::gateway('NameOfGateway')->send(['87686655455','1212121212','2323232323'],'sms.test',['param1'=>'Name 1']);  
 ```
