@@ -3,7 +3,9 @@
 use Softon\Sms\Gateways\ClickatellGateway;
 use Softon\Sms\Gateways\CustomGateway;
 use Softon\Sms\Gateways\GupshupGateway;
+use Softon\Sms\Gateways\ItexmoGateway;
 use Softon\Sms\Gateways\LogGateway;
+use Softon\Sms\Gateways\MockerGateway;
 use Softon\Sms\Gateways\MVaayooGateway;
 use Softon\Sms\Gateways\SmsAchariyaGateway;
 use Softon\Sms\Gateways\SmsCountryGateway;
@@ -50,6 +52,8 @@ class Sms {
             case 'Gupshup':
                 $this->gateway = new GupshupGateway();
                 break;
+            case 'Itexmo':
+                $this->gateway = new ItexmoGateway();
             case 'MVaayoo':
                 $this->gateway = new MVaayooGateway();
                 break;

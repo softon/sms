@@ -28,6 +28,10 @@ return [
         'password' => '',
     ],
 
+    'itexmo' => [
+        'api_code'  => ''                        // API_CODE
+    ],
+
     'mvaayoo' => [
         'user'  => '',                      // Get it from http://mvaayoo.com
         'senderID'  => 'TEST SMS',
