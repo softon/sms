@@ -29,7 +29,7 @@ return [
     ],
 
     'itexmo' => [
-        'api_code'  => ''                        // API_CODE
+        'api_code'  => '',                 // API_CODE
     ],
 
     'mvaayoo' => [
