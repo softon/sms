@@ -37,7 +37,6 @@ class ItexmoGateway implements SmsGatewayInterface {
         $this->gwvars['2'] = $message;
         $client = new \GuzzleHttp\Client();
         $this->response = $client->post($this->getUrl(), ['form_params'=>$this->gwvars])->getBody()->getContents();
-        Log::info('Custom SMS Gateway Response: '.$this->response);
         return $this;
 
     }
