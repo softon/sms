@@ -12,6 +12,7 @@ use Softon\Sms\Gateways\SmsCountryGateway;
 use Softon\Sms\Gateways\SmsGatewayInterface;
 use Softon\Sms\Gateways\SmsLaneGateway;
 use Softon\Sms\Gateways\NexmoGateway;
+use Softon\Sms\Gateways\Msg91Gateway;
 
 class Sms {
 
@@ -36,6 +37,19 @@ class Sms {
 
     public function send_raw($mobile,$message){
         return $this->gateway->sendSms($mobile,$message);
+    }
+
+    public function sendotp($mobile,$view,$params=[]){
+        $message = $this->view->getView($view,$params)->render();
+        return $this->gateway->sendOTP($mobile,$message);
+    }
+
+    public function sendotp_raw($mobile,$message){
+        return $this->gateway->sendOTP($mobile,$message);
+    }
+
+    public function verifyotp($mobile,$otp){
+        return $this->gateway->verifyOTP($mobile,$otp);
     }
 
     public function gateway($name)
@@ -71,6 +85,9 @@ class Sms {
                 break;
             case 'Mocker':
                 $this->gateway = new MockerGateway();
+                break;
+            case 'Msg91':
+                $this->gateway = new Msg91Gateway();
                 break;
             case 'Custom':
                 $this->gateway = new CustomGateway();
