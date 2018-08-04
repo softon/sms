@@ -1,7 +1,7 @@
 <?php namespace Softon\Sms\Gateways;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\BadResponseException;
+use Illuminate\Support\Facades\Config;
 
 class Msg91Gateway implements SmsGatewayInterface {
 
