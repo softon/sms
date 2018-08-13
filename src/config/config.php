@@ -67,6 +67,14 @@ return [
         'sender_id'  => '',                    // http://mocker.in :: Any Random Value of Your Choise
     ],
 
+    'msg91' => [
+        'authkey' => '',                      // Get it From https://msg91.com
+        'sender_id' => '',
+        'sms_route' => 4,
+        'otp_length' => 6,
+        'otp_expiry' => 15
+    ],
+
     'custom' => [                           // Can be used for any gateway
         'url' => '',                        // Gateway Endpoint
         'params' => [                       // Parameters to be included in the request
