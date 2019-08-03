@@ -32,7 +32,7 @@ class SmsServiceProvider extends ServiceProvider {
         $this->publishes([
             __DIR__.'/views/sms' => base_path('resources/views/sms'),
             __DIR__.'/config/config.php' => base_path('config/sms.php'),
-        ]);
+		]);
     }
 
 	/**

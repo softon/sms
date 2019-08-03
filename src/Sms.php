@@ -12,6 +12,7 @@ use Softon\Sms\Gateways\SmsCountryGateway;
 use Softon\Sms\Gateways\SmsGatewayInterface;
 use Softon\Sms\Gateways\SmsLaneGateway;
 use Softon\Sms\Gateways\NexmoGateway;
+use Softon\Sms\Gateways\MSG91Gateway;
 
 class Sms {
 
@@ -28,11 +29,25 @@ class Sms {
         $this->view = $view;
     }
 
-    public function send($mobile,$view,$params=[]){
-
-        $message = $this->view->getView($view,$params)->render();
-        return $this->gateway->sendSms($mobile,$message);
-    }
+    function __call($name_of_function, $arguments) { 
+              
+        // It will match the function name 
+        if($name_of_function == 'send') { 
+              
+            switch (count($arguments)) { 
+                      
+                // If there is only one argument 
+                // area of circle 
+                case 2: 
+                    return $this->gateway->sendSms($arguments[0],$arguments[1]); 
+                          
+                // IF two arguments then area is rectangel; 
+                case 3: 
+                    $message = $this->view->getView($arguments[1],$arguments[2])->render();
+                    return $this->gateway->sendSms($arguments[0],$message); 
+            } 
+        } 
+    } 
 
     public function send_raw($mobile,$message){
         return $this->gateway->sendSms($mobile,$message);
@@ -40,39 +55,42 @@ class Sms {
 
     public function gateway($name)
     {
-        // Gateways : Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Nexmo / Mocker/ Custom
+        $name = strtolower($name);
         switch($name)
         {
-            case 'Log':
+            case 'log':
                 $this->gateway = new LogGateway();
                 break;
-            case 'Clickatell':
+            case 'clickatell':
                 $this->gateway = new ClickatellGateway();
                 break;
-            case 'Gupshup':
+            case 'gupshup':
                 $this->gateway = new GupshupGateway();
                 break;
-            case 'Itexmo':
+            case 'itexmo':
                 $this->gateway = new ItexmoGateway();
-            case 'MVaayoo':
+            case 'mvaayoo':
                 $this->gateway = new MVaayooGateway();
                 break;
-            case 'SmsAchariya':
+            case 'smsachariya':
                 $this->gateway = new SmsAchariyaGateway();
                 break;
-            case 'SmsCountry':
+            case 'smscountry':
                 $this->gateway = new SmsCountryGateway();
                 break;
-            case 'SmsLane':
+            case 'smslane':
                 $this->gateway = new SmsLaneGateway();
                 break;
-            case 'Nexmo':
+            case 'nexmo':
                 $this->gateway = new NexmoGateway();
                 break;
-            case 'Mocker':
+            case 'mocker':
                 $this->gateway = new MockerGateway();
                 break;
-            case 'Custom':
+            case 'msg91':
+                $this->gateway = new MSG91Gateway();
+                break;
+            case 'custom':
                 $this->gateway = new CustomGateway();
                 break;
         }

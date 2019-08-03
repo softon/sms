@@ -6,13 +6,15 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |   gateway = Log / Clickatell / Gupshup / MVaayoo / SmsAchariya / SmsCountry / SmsLane / Nexmo / Custom
+    |   gateway = log / clickatell / gupshup / mvaayoo / 
+                  smsachariya / smscountry / smslane / 
+                  nexmo / msg91 /custom
     |   view    = File
     */
 
     'countryCode' => '+91',
 
-    'gateway' => 'Mocker',                     // Replace with the name of appropriate gateway
+    'gateway' => 'Log',                     // Replace with the name of appropriate gateway
 
 
     'view'    => 'File',
@@ -58,13 +60,20 @@ return [
     ],
 
     'nexmo' => [
-        'api_key'  => '',                    // Get it From http://nexmo.com
+        'api_key'  => '',                   // Get it From http://nexmo.com
         'api_secret'  => '',
         'from'  => '',
     ],
 
     'mocker' => [
-        'sender_id'  => '',                    // http://mocker.in :: Any Random Value of Your Choise
+        'sender_id'  => '',                 // http://mocker.in :: Any Random Value of Your Choise
+    ],
+
+    'msg91' => [
+        'authkey'  => '',                   // http://msg91.com
+        'sender'  => '',                    
+        'route'  => '4',                    // 1 = Promotional, 4 = Transactional
+        'country'  => '91',                    
     ],
 
     'custom' => [                           // Can be used for any gateway
