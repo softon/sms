@@ -6,18 +6,29 @@ return [
     |--------------------------------------------------------------------------
     | Sms Service Config
     |--------------------------------------------------------------------------
-    |   gateway = log / clickatell / gupshup / mvaayoo / 
-                  smsachariya / smscountry / smslane / 
-                  nexmo / msg91 /custom
+    |   gateway = Mocker / Log / Clickatell / Gupshup / MVaayoo / 
+                  SmsAchariya / SmsCountry / SmsLane / 
+                  Nexmo / MSG91 / Custom
     |   view    = File
     */
 
     'countryCode' => '+91',
 
-    'gateway' => 'Log',                     // Replace with the name of appropriate gateway
+    'gateway' => 'Mocker',                     // Replace with the name of appropriate gateway
 
 
     'view'    => 'File',
+
+    /**
+     * Mock your SMSes with Mocker.in
+     * Select Any Random Value for the Sender ID and then check messages at
+     * https://mocker.in/sms/YOUR_SENDER_ID
+     * e.g.: https://mocker.in/sms/MOCKER will list all messages sent to this id.
+     */
+
+    'mocker' => [
+        'sender_id'  => 'MOCKER',
+    ],
 
     'clickatell' => [                       // Get it from http://clickatell.com
         'api_id'  => '',
@@ -65,15 +76,12 @@ return [
         'from'  => '',
     ],
 
-    'mocker' => [
-        'sender_id'  => '',                 // http://mocker.in :: Any Random Value of Your Choise
-    ],
 
     'msg91' => [
         'authkey'  => '',                   // http://msg91.com
-        'sender'  => '',                    
+        'sender'  => '',
         'route'  => '4',                    // 1 = Promotional, 4 = Transactional
-        'country'  => '91',                    
+        'country'  => '91',
     ],
 
     'custom' => [                           // Can be used for any gateway

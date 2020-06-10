@@ -1,4 +1,6 @@
-<?php namespace Softon\Sms\Gateways;
+<?php
+
+namespace Softon\Sms\Gateways;
 
 
 
@@ -6,14 +8,15 @@
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 
-class MockerGateway implements SmsGatewayInterface {
+class MockerGateway implements SmsGatewayInterface
+{
 
     protected $gwvars = array();
-    protected $url = 'http://mocker.in/sms/mocker?';
+    protected $url = 'https://mocker.in/api/sms';
     protected $request = '';
     public $status = false;
     public $response = '';
-    public $countryCode='';
+    public $countryCode = '';
 
     function __construct()
     {
@@ -25,30 +28,23 @@ class MockerGateway implements SmsGatewayInterface {
 
     public function getUrl()
     {
-        foreach($this->gwvars as $key=>$val) {
-            $this->request.= $key."=".urlencode($val);
-            $this->request.= "&";
-        }
-        $this->request = substr($this->request, 0, strlen($this->request)-1);
-        return $this->url.$this->request;
-
+        return $this->url;
     }
 
-    public function sendSms($mobile,$message)
+    public function sendSms($mobile, $message)
     {
-        $mobile = $this->addCountryCode($mobile);
+        //$mobile = $this->addCountryCode($mobile);
 
-        if(is_array($mobile)){
+        if (is_array($mobile)) {
             $mobile = $this->composeBulkMobile($mobile);
         }
 
         $this->gwvars['to'] = $mobile;
         $this->gwvars['message'] = $message;
         $client = new \GuzzleHttp\Client();
-        $this->response = $client->get($this->getUrl())->getBody()->getContents();
-        Log::info('Mocker SMS Response: '.$this->response);
+        $this->response = $client->post($this->getUrl(), ['form_params' => $this->gwvars])->getBody()->getContents();
+        Log::info('Mocker SMS Response: ' . $this->response);
         return $this;
-
     }
 
 
@@ -60,7 +56,7 @@ class MockerGateway implements SmsGatewayInterface {
      */
     private function composeBulkMobile($mobile)
     {
-        return implode(',',$mobile);
+        return implode(',', $mobile);
     }
 
     /**
@@ -70,12 +66,14 @@ class MockerGateway implements SmsGatewayInterface {
      */
     private function addCountryCode($mobile)
     {
-        if(is_array($mobile)){
-            array_walk($mobile, function(&$value, $key) { $value = $this->countryCode.$value; });
+        if (is_array($mobile)) {
+            array_walk($mobile, function (&$value, $key) {
+                $value = $this->countryCode . $value;
+            });
             return $mobile;
         }
 
-        return $this->countryCode.$mobile;
+        return $this->countryCode . $mobile;
     }
 
 
@@ -84,11 +82,8 @@ class MockerGateway implements SmsGatewayInterface {
      * Check Response
      * @return array
      */
-    public function response(){
+    public function response()
+    {
         return json_decode($this->response);
     }
-
-
-
-
 }
